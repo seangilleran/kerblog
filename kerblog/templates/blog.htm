@@ -1,0 +1,22 @@
+{% extends "_layout.htm" %}
+{% block content %}
+{% for post in posts %}
+<div class="container-fluid">
+  <div class="page-header"><h3>{{ post.title }}</h3></div>
+</div>
+<div class="container-fluid">
+  <div class="col-md-11">
+    <div class="post-body">
+      {{ post.html|safe }}
+    </div>
+    <p>
+      <span class="glyphicon glyphicon-time"></span>
+      <time>{{ post.timestamp.strftime("%c") }}</time>
+      &nbsp;&nbsp;
+      <span class="glyphicon glyphicon-floppy-disk"></span>
+      <a href="{{ url_for('views.get_post', title=post.safe_title) }}">Permalink</a>
+    </p>
+  </div>
+</div>
+{% endfor %}
+{% endblock %}

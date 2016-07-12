@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sean Gilleran</title>
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css">
+  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+  <div class="col-md-8">
+    {% block content %}{% endblock %}
+  </div>
+  <div class="col-md-4">
+    <div class="container-fluid text-center">
+      <img src="{{ url_for('static', filename='img/sean.jpg') }}"
+           class="img-circle" width="128px">
+    </div>
+    <div id="site-title" class="container-fluid text-center">
+      <h2 class="code">Sean Gilleran<span id="site-title-us"></span></h2>
+    </div>
+    <br>
+    <div class="container-fluid">
+      <ul class="nav nav-pills nav-stacked">
+        <li{% if pg == "blog" %} class="active"{% endif %}>
+          <a href="{{ url_for('views.index') }}">
+            <span class="glyphicon glyphicon-file"></span>&nbsp;
+            Blog
+          </a>
+        </li><li{% if pg == "cv" %} class="active"{% endif %}>
+          <a href="{{ url_for('views.cv') }}">
+            <span class="glyphicon glyphicon-education"></span>&nbsp;
+            CV
+          </a>
+        </li><li{% if pg == "projects" %} class="active"{% endif %}>
+          <a href="{{ url_for('views.projects') }}">
+            <span class="glyphicon glyphicon-wrench"></span>&nbsp;
+            Projects
+          </a>
+        </li>
+        <li class="divider" role="separator">&nbsp;</li>
+        <li>
+          <a href="mailto:sean.gilleran@wsu.edu">
+            <span class="glyphicon glyphicon-send"></span>&nbsp;
+            E-mail
+          </a>
+        </li><li>
+          <a target="_blank" href="http://instagram.com/sgilleran">
+            <span class="fa fa-instagram"></span>&nbsp;
+            Instagram
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="col-md-8">
+    <div class="container-fluid">
+      <hr>
+      <p id="page-footer" class="text-muted">
+        Page generated 
+        <time>{{ timestamp.strftime("%c") }}</time>.
+        <br>It's now safe to turn off your computer.
+      </p>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</body>
+</html>

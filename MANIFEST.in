@@ -1,0 +1,3 @@
+recursive-include kerblog/static *
+recursive-include kerblog/templates *
+
