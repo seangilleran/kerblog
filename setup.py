@@ -6,7 +6,7 @@ setup(
     version='0.1',
     license='MIT',
     author='Sean Gilleran',
-    author_email'sgilleran@gmail.com',
+    author_email='sgilleran@gmail.com',
     url='https://github.com/seangilleran/kerblog',
     download_url='https://github.com/seangilleran/kerblog/tarball/0.3',
     packages=['kerblog'],
